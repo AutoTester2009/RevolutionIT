@@ -1,0 +1,12 @@
+C:\GitHub_AutoTester2009\RevolutionIT\FlightBookingTestSuite\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\GitHub_AutoTester2009\RevolutionIT\FlightBookingTestSuite\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\GitHub_AutoTester2009\RevolutionIT\FlightBookingTestSuite\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\GitHub_AutoTester2009\RevolutionIT\FlightBookingTestSuite\ConsoleApplication1\bin\Debug\FlightBookingTestFramework.dll
+C:\GitHub_AutoTester2009\RevolutionIT\FlightBookingTestSuite\ConsoleApplication1\bin\Debug\WebDriver.dll
+C:\GitHub_AutoTester2009\RevolutionIT\FlightBookingTestSuite\ConsoleApplication1\bin\Debug\WebDriver.Support.dll
+C:\GitHub_AutoTester2009\RevolutionIT\FlightBookingTestSuite\ConsoleApplication1\bin\Debug\FlightBookingTestFramework.pdb
+C:\GitHub_AutoTester2009\RevolutionIT\FlightBookingTestSuite\ConsoleApplication1\bin\Debug\WebDriver.xml
+C:\GitHub_AutoTester2009\RevolutionIT\FlightBookingTestSuite\ConsoleApplication1\bin\Debug\WebDriver.Support.xml
+C:\GitHub_AutoTester2009\RevolutionIT\FlightBookingTestSuite\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\GitHub_AutoTester2009\RevolutionIT\FlightBookingTestSuite\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\GitHub_AutoTester2009\RevolutionIT\FlightBookingTestSuite\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
