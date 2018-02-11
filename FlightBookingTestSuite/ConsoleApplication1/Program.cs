@@ -19,6 +19,7 @@ namespace ConsoleApplication1
         {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
 
             LoginPage LoginPage = new LoginPage(driver);
             FlightFinderPage FlightFinderPage = new FlightFinderPage(driver);
@@ -27,8 +28,6 @@ namespace ConsoleApplication1
             FlightCongirmationPage FlightConfirmationPage = new FlightCongirmationPage(driver);
 
             driver.Navigate().GoToUrl("http://newtours.demoaut.com/");
-
-            Thread.Sleep(3000);
 
             LoginPage.Login("mercury", "mercury");
             FlightFinderPage.FindFlights(true, "Sydney", "London", "First");

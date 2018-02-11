@@ -37,7 +37,7 @@ namespace FlightBookingTestFramework
 
             Assert.AreEqual(expectedFrom, actualFrom);
             Assert.AreEqual(expectedTo, actualTo);
-            Assert.AreEqual(expectedFlightNum, actualFlightNum);
+            Assert.AreEqual(expectedFlightNum.ToString(), actualFlightNum);
             Assert.AreEqual(expectedClass, actualClass);           
         }
 
