@@ -25,7 +25,20 @@ namespace FlightBookingTestFramework
         {
             return str.Replace("\r","");
         }
- 
+
+
+        private void Verify(string expected, string actual, string comment)
+        {
+            try
+            {
+                Assert.AreEqual(expected, actual);
+                Console.WriteLine(comment + "  Expected [" + expected + "]   Actual [" + actual + "] - PASS");            
+            }
+            catch
+            {
+                Console.WriteLine(comment + "  Expected [" + expected + "]   Actual [" + actual + "] - FAIL");            
+            }
+        }
 
         private void VerifyDetails(string actualFlightDetails, string expectedFrom, string expectedTo, int expectedFlightNum, string expectedClass)
         {
@@ -36,20 +49,23 @@ namespace FlightBookingTestFramework
             string actualFlightNum = Regex.Replace(Clean(lines[1]), "^.*Airlines ", "");
             string actualClass = Clean(lines[2]);
 
-            Assert.AreEqual(expectedFrom, actualFrom);
-            Assert.AreEqual(expectedTo, actualTo);
-            Assert.AreEqual(expectedFlightNum.ToString(), actualFlightNum);
-            Assert.AreEqual(expectedClass, actualClass);           
+            Verify(expectedFrom, actualFrom, "Verify From City");
+            Verify(expectedTo, actualTo, "Verify To City");
+            Verify(expectedFlightNum.ToString(), actualFlightNum, "Verify Flight Number");
+            Verify(expectedClass, actualClass, "Verify Service Class");
+
         }
 
         public void VerifyDepartureDetails(string expectedFrom, string expectedTo, int expectedFlightNum, string expectedClass)
         {
+            Console.WriteLine("\n------------------- Verify displayed Departure flight details ----------------");
             IList<IWebElement> elems = driver.FindElements(By.XPath("//td[@class='frame_header_info']"));
             VerifyDetails(elems[2].Text, expectedFrom, expectedTo, expectedFlightNum, expectedClass);
         }
 
         public void VerifyArrivalDetails(string expectedFrom, string expectedTo, int expectedFlightNum, string expectedClass)
         {
+            Console.WriteLine("\n------------------- Verify displayed Arrival flight details ----------------");
             IList<IWebElement> elems = driver.FindElements(By.XPath("//td[@class='frame_header_info']"));
             VerifyDetails(elems[4].Text, expectedFrom, expectedTo, expectedFlightNum, expectedClass);
         }
