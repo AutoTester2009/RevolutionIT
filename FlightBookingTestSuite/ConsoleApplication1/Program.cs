@@ -15,11 +15,20 @@ namespace ConsoleApplication1
     {
         static public IWebDriver driver;
 
-        static void Main(string[] args)
+        static public void TestCase1(IWebDriver driver)
         {
-            driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            // Test Data
+            string Username = "mercury";
+            string Password = "mercury";
+            bool OneWay = true;
+            string CityFrom =  "Sydney";
+            string CityTo = "London";
+            string Class = "First";
+            string FirstName = "James";
+            string LastName = "Smith";
+            string CCNum = "12345678";
+            int DepartureFlightNum = 362;
+            int ArrivalFlightNum = 630;
 
             LoginPage LoginPage = new LoginPage(driver);
             FlightFinderPage FlightFinderPage = new FlightFinderPage(driver);
@@ -29,13 +38,25 @@ namespace ConsoleApplication1
 
             driver.Navigate().GoToUrl("http://newtours.demoaut.com/");
 
-            LoginPage.Login("mercury", "mercury");
-            FlightFinderPage.FindFlights(true, "Sydney", "London", "First");
-            SelectFlightPage.SelectFlightNumbers(363, 630);
-            BookFlightPage.EnterDetails("James", "Do", "1234897");
-            FlightConfirmationPage.VerifyDepartureDetails("Sydney", "London", 363, "First");
-            FlightConfirmationPage.VerifyArrivalDetails("London", "Sydney", 630, "First");
+            LoginPage.Login(Username, Password);
+            FlightFinderPage.FindFlights(OneWay, CityFrom, CityTo, Class);
+            SelectFlightPage.SelectFlightNumbers(DepartureFlightNum, ArrivalFlightNum);
+            BookFlightPage.EnterDetails(FirstName, LastName, CCNum);
+            FlightConfirmationPage.VerifyDepartureDetails(CityFrom, CityTo, DepartureFlightNum, Class);
+            FlightConfirmationPage.VerifyArrivalDetails(CityTo, CityFrom, ArrivalFlightNum, Class);
+        }
 
+        /// <summary>
+        /// Note: I am using Visual Studio 2012 and having problems installing latest version of NUnit. So I just created my own test runner.
+        /// </summary>
+        /// <param name="args"></param>
+        static void Main(string[] args)
+        {
+            driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+
+            TestCase1(driver);
         }
     }
 }

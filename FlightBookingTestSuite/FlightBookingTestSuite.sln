@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightBookingTestFramework", "FlightBookingTestFramework\FlightBookingTestFramework.csproj", "{20EEC73D-686E-4D49-A64E-85CD1494390A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{CC421616-66B4-4D2C-AF72-E75FEF1A0E86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTestRunnerConsoleApp", "ConsoleApplication1\MyTestRunnerConsoleApp.csproj", "{CC421616-66B4-4D2C-AF72-E75FEF1A0E86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

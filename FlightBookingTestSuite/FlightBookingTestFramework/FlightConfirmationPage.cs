@@ -29,6 +29,7 @@ namespace FlightBookingTestFramework
 
         private void VerifyDetails(string actualFlightDetails, string expectedFrom, string expectedTo, int expectedFlightNum, string expectedClass)
         {
+            // Parse flight details string and extract key values
             var lines = actualFlightDetails.Split('\n');
             string actualFrom = Clean(lines[0]).Split(' ')[0];
             string actualTo = Clean(lines[0]).Split(' ')[2];
